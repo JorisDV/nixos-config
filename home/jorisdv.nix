@@ -9,6 +9,8 @@
 
   home.stateVersion = "26.05";
 
+  xdg.configFile."niri/config.kdl".source = ../niri/config.kdl;
+
   programs.noctalia = {
     enable = true;
 
