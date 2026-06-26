@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -11,13 +11,23 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+
+    extra-substituters = [ "https://noctalia.cachix.org" ];
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWp0xNFQsBRglJzxWPp3dkU4="
+    ];
+  };
 
   networking.hostName = "laptop";
 
   networking.networkmanager.enable = true;
 
   hardware.bluetooth.enable = true;
+
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 
   time.timeZone = "Europe/Brussels";
 
@@ -56,27 +66,16 @@
 
   programs.niri = {
     enable = true;
-    useNautilus = true;
   };
 
-  programs.dms-shell = {
+  services.greetd = {
     enable = true;
-    systemd= {
-      enable = true;
-      restartIfChanged = true;
+    settings.default_session = {
+      command = "${config.programs.niri.package}/bin/niri-session";
+      user = "jorisdv";
     };
   };
 
-  services.displayManager.dms-greeter = {
-    enable = true;
-    compositor.name = "niri";
-    configHome = "/home/jorisdv";
-  };
-
-  services.dbus.enable = true;
-  security.polkit.enable = true;
-  xdg.portal.enable = true;
-  
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -84,9 +83,9 @@
     git
     alacritty
     firefox
-    fuzzel
-    xwayland-satellite
     nautilus
+
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   system.stateVersion = "26.05";
