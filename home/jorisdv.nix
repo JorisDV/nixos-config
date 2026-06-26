@@ -20,7 +20,7 @@
 
       wallpaper = {
         enabled = true;
-        default.path = "~/wallpapers/wallpaper.png";
+        default.path = "${../wallpaper.png}";
       };
     };
   };
@@ -29,8 +29,10 @@
     enable = true;
 
     settings = {
-      user.name = "Joris De Vlieger";
-      user.email = "JorisDV@mail.com";
+      user = {
+        name = "Joris De Vlieger";
+        email = "JorisDV@mail.com";
+      };
       init.defaultBranch = "main";
       core.editor = "hx";
     };

@@ -98,7 +98,6 @@
   environment.systemPackages = with pkgs; [
     firefox
     nautilus
-    fuzzel
   ];
 
   system.stateVersion = "26.05";
