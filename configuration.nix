@@ -16,7 +16,7 @@
 
     extra-substituters = [ "https://noctalia.cachix.org" ];
     extra-trusted-public-keys = [
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWp0xNFQsBRglJzxWPp3dkU4="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 
@@ -68,11 +68,18 @@
     enable = true;
   };
 
-  services.greetd = {
+  programs.noctalia-greeter = {
     enable = true;
-    settings.default_session = {
-      command = "${config.programs.niri.package}/bin/niri-session";
-      user = "jorisdv";
+
+    package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
+    settings = {
+      session.default = "niri";
+      user.default = "jorisdv";
+
+      keyboard = {
+        layout = "be";
+      };
     };
   };
 

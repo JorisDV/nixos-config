@@ -6,9 +6,14 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, noctalia, ... }: {
+  outputs = inputs@{ self, nixpkgs, noctalia, noctalia-greeter, ... }: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -17,6 +22,7 @@
       };
 
       modules = [
+        inputs.noctalia-greeter.nixosModules.default
         ./configuration.nix
       ];
     };
