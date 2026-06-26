@@ -98,8 +98,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     nautilus
-
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    fuzzel
   ];
 
   system.stateVersion = "26.05";
