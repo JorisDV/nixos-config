@@ -57,7 +57,17 @@
     isNormalUser = true;
     description = "Joris De Vlieger";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    extraSpecialArgs = {
+      inherit inputs;
+    };
+
+    users.jorisdv = import ./home/jorisdv.nix;
   };
 
   programs.fish = {
@@ -86,9 +96,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    helix
-    git
-    alacritty
     firefox
     nautilus
 
