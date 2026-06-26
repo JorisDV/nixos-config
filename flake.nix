@@ -29,7 +29,7 @@
       modules = [
         home-manager.nixosModules.default
         noctalia-greeter.nixosModules.default
-        ./configuration.nix
+        ./hosts/laptop
       ];
     };
   };
