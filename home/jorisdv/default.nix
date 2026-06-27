@@ -4,9 +4,8 @@
     inputs.noctalia.homeModules.default
 
     ./git.nix
-    ./fish.nix
-    ./helix.nix
     ./alacritty.nix
+    ./helix.nix
     ./noctalia.nix
     ./niri.nix
   ];
