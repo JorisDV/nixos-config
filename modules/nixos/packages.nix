@@ -3,8 +3,10 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    firefox
-    nautilus
-    loupe
+    nh            # nix cli helper
+    firefox       # web browser
+    nautilus      # file brower
+    loupe         # image viewer
+    gnome-notes   # note editor
   ];
 }
