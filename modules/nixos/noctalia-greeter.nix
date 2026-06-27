@@ -9,9 +9,9 @@
       session.default = "niri";
       user.default = "jorisdv";
 
-      keyboard = {
-        layout = "be";
-      };
+      keyboard.layout = "be";
+
+      appearance.sheme = "Synced";
     };
   };
 }

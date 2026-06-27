@@ -1,4 +1,5 @@
-{  
+{ config, ... }: {
+    
   programs.noctalia = {
     enable = true;
 
@@ -6,10 +7,19 @@
       theme = {
         mode = "dark";
         source = "wallpaper";
-        wallpaper_sheme = "vibrant";
+        wallpaper_scheme = "vibrant";
 
         templates = {
           enable_builtin_templates = true;
+          builtin_ids = [
+            "gtk3"
+            "gtk4"
+            "qt"
+            "kcolorscheme"
+            "helix"
+            "niri"
+            "alacritty"
+          ];
         };
       };
 
@@ -70,7 +80,7 @@
 
       location.auto_locate = true;
 
-      battery.warning_treshold = 20;
+      battery.warning_threshold = 20;
 
       nightlight.enabled = true;
 
@@ -83,6 +93,11 @@
         panel = {
           clipboard_placement = "attached";
           launcher_placement = "attached";
+        };
+
+        screenshot = {
+          directory = "${config.home.homeDirectory}/Pictures/Screenshots";
+          freeze_screen = true;
         };
       };
     };
