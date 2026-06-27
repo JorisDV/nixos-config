@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules/nixos/nix.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/networking.nix
     ../../modules/nixos/users.nix
