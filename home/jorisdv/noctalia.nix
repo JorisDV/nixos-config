@@ -99,6 +99,8 @@
           directory = "${config.home.homeDirectory}/Pictures/Screenshots";
           freeze_screen = true;
         };
+
+        setup_wizard_enabled = false;
       };
     };
   };
