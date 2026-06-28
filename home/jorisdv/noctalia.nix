@@ -28,7 +28,7 @@
         default.path = "${../../wallpaper.png}";
       };
       
-      bar.default = {
+      bar.default = rec {
         start = [ "workspaces" ];
         center = [ "date" "clock" "weather" ];
         end = [ "notifications"
@@ -58,8 +58,10 @@
         ];
 
         dead_zone.command = "noctalia msg panel-toggle control-center";
-       
+        
+        thickness = 34;
         margin_ends = 10;
+        radius = thickness / 2;
         widget_spacing = 12;
       };
       

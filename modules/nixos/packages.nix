@@ -9,5 +9,6 @@
     loupe               # image viewer
     gnome-text-editor   # text editor
     totem               # video player
+    qalculate-gtk       # calculator
   ];
 }
