@@ -3,6 +3,7 @@
   imports = [
     inputs.noctalia.homeModules.default
 
+    ./packages.nix
     ./git.nix
     ./alacritty.nix
     ./helix.nix

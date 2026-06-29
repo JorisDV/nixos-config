@@ -23,9 +23,10 @@
         };
       };
 
-      wallpaper = {
+      wallpaper = rec {
         enabled = true;
-        default.path = "${../../wallpaper.png}";
+        directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
+        default.path = "${directory}/default.png";
       };
       
       bar.default = rec {
@@ -101,8 +102,14 @@
           directory = "${config.home.homeDirectory}/Pictures/Screenshots";
           freeze_screen = true;
         };
-
+        
+        avatar_path = "${config.home.homeDirectory}/Pictures/avatar.jpg";
+        
         setup_wizard_enabled = false;
+
+        polkit_agent = true;
+
+        greeter_sync.auto_sync = true;
       };
     };
   };
