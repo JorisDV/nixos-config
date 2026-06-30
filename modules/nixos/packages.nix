@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     nh                  # nix cli helper
     htop                # system monitoring tool
+    udiskie             # Removable disk automounter
     firefox             # web browser
     nautilus            # file brower
     loupe               # image viewer
@@ -22,5 +23,7 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    enableFishIntegration = true;
+    silent = true;
   };
 }

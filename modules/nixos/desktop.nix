@@ -25,4 +25,7 @@
   };
 
   console.keyMap = "be-latin1";
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 }
