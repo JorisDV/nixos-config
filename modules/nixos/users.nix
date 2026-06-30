@@ -4,8 +4,6 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Joris De Vlieger";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
-
-  programs.fish.enable = true;
 }
