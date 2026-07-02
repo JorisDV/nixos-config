@@ -8,5 +8,6 @@
     lldb
     pkg-config
     stremio-linux-shell
+    inkscape
   ];
 }
