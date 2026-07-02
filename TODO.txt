@@ -1,0 +1,17 @@
+TODO NIXOS
+
+- nh config (FLAKE, ...)
+- Wallpapers handling (submodule, ...)
+- fix video viewer and text editor icons
+- General file structure
+- General file contents / 
+- Noctalia window switcher tab problem
+- Fish config
+- Comments in config
+- Firefox config (account?, bookmarks in bad position, ...)
+- Prism launcher
+- Fix Caps Lock
+- Helix setup (clipboard, cursor theme, language servers, ...)
+- Noctalia cachix
+- sudo password dots/stars
+- first alacritty intance wrong theme
